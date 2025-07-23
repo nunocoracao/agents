@@ -1,0 +1,1 @@
+Build me a trello clone Electron based desktop app for mac. Make it look sleek and modern.
