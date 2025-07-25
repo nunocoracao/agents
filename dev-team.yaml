@@ -39,6 +39,7 @@ agents:
     sub_agents: [designer, awesome_engineer]
     toolsets:
       - type: filesystem
+      - type: shell
     think: true
     todo: true
     memory:
@@ -71,6 +72,7 @@ agents:
       Build upon previous designs to maintain consistency across the application.
     toolsets:
       - type: filesystem
+      - type: shell
     think: true
     memory:
       path: dev_memory.db
