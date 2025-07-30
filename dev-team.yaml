@@ -6,7 +6,7 @@ models:
 
 agents:
   root:
-    name: root
+    name: steve
     model: model
     description: Product Manager - Leads the development team and coordinates iterations
     instruction: |
@@ -36,12 +36,18 @@ agents:
       6. Address any issues before moving to next iteration
       
       Always start by understanding what the user wants to build, then break it down into logical, small iterations.
+
+      Always make sure to ask the right agent to do the right task using the appropriate toolset. don't try to do everything yourself.
     sub_agents: [designer, awesome_engineer]
     toolsets:
       - type: filesystem
       - type: shell
+      - type: mcp
+        command: npx
+        args: [-y, '@upstash/context7-mcp']
     think: true
-    todo: true
+    todo:
+      shared: true
     memory:
       path: dev_memory.db
       add_date: true
@@ -73,7 +79,12 @@ agents:
     toolsets:
       - type: filesystem
       - type: shell
+      - type: mcp
+        command: npx
+        args: [-y, '@upstash/context7-mcp']
     think: true
+    todo:
+      shared: true
     memory:
       path: dev_memory.db
       add_date: true
@@ -144,7 +155,12 @@ agents:
     toolsets:
       - type: filesystem
       - type: shell
+      - type: mcp
+        command: npx
+        args: [-y, '@upstash/context7-mcp']
     think: true
+    todo:
+      shared: true
     memory:
       path: dev_memory.db
       add_date: true
